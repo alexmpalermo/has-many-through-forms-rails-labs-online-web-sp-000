@@ -12,13 +12,13 @@
   </ul>
   
   <%= form_for @comment do |f| %>
-  <%= f.text_field :category_name, list: "categories_autocomplete" %>
-  <datalist id="categories_autocomplete">
-    <% Category.all.each do |category| %>
-      <option value="<%= category.name %>">
+  <%= f.text_field :user, list: "users_autocomplete" %>
+  <datalist id="users_autocomplete">
+    <% User.all.each do |user| %>
+      <option value="<%= user.username %>">
     <% end %>
   </datalist>
-  <textarea name="post[content]"></textarea>
+  <textarea name="comment[content]"></textarea>
   <%= f.submit %>
 <% end %>
   

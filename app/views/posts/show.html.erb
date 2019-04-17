@@ -6,9 +6,13 @@
   
   <%= @post.content %>
   <ul>
-  <% @post.comments.each do |comment| %>
-  <li><%= comment.content %></li>
-  <% end %>
+    <% @post.comments.each do |comment| %>
+      <% if comment.user %>
+        <li>
+          <%= comment.user.username %> says: <%= comment.content %>
+        </li>
+      <%end%>
+    <% end %>
   </ul>
   
   <ul>

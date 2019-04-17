@@ -12,7 +12,7 @@
   </ul>
   
   <ul>
-    <% @post.users.each do |user| %>
+    <% @post.users.uniq.each do |user| %>
   <li><%= user.username %></li>
   <% end %>
   </ul>
